@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import styles from '../../styles/Burgers.module.css'
 
+const server = process.env.SERVER
+
 export const getStaticPaths = async () => {
   try {
-    const res = await fetch('http://localhost:5000/items')
+    const res = await fetch(`${server}items`)
 
     const data = await res.json()
     const paths = await data.map((burger) => {
@@ -31,7 +33,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const id = context.params.id
   try {
-    const res = await fetch(`http://localhost:5000/items/${id}`)
+    const res = await fetch(`${server}items/${id}`)
     if (res.ok) {
       const data = await res.json()
 
