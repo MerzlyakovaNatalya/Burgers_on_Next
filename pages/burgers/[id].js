@@ -5,7 +5,7 @@ const server = process.env.SERVER
 
 export const getStaticPaths = async () => {
   try {
-    const res = await fetch(`${server}items`)
+    const res = await fetch(`${server}/items`)
 
     const data = await res.json()
     const paths = await data.map((burger) => {
@@ -33,7 +33,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const id = context.params.id
   try {
-    const res = await fetch(`${server}items/${id}`)
+    const res = await fetch(`${server}/items/${id}`)
     if (res.ok) {
       const data = await res.json()
 

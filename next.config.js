@@ -11,3 +11,9 @@ module.exports = {
     SERVER: process.env.SERVER,
   },
 };
+
+module.exports = {
+  env: {
+    LOCAL: process.env.LOCAL,
+  },
+};
