@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "serve": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "json-server": "json-server --watch db.json --port 5000",
-    "serve": "concurrently \"npm run dev\" \"npm run json-server\""
+    "dev": "concurrently \"npm run serve\" \"npm run json-server\""
   },
   "dependencies": {
     "concurrently": "^7.5.0",
